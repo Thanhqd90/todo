@@ -1,9 +1,9 @@
 <div class="d-flex justify-content-center container">
         <form action="/api/todo" method="POST">
             <textarea name="taskName" class="mt-2 form-control"></textarea>
-            <div class="button-col">
-                <button type="submit" class="btn btn-primary btn-lg">Add a new task</button>
-            </div>
+
+                <button type="submit" class="mt-2 btn btn-primary btn-lg">Add a new task</button>
+
         </form>
 </div>
 
@@ -16,7 +16,7 @@
             <h1 class="text-center">Task to complete</h1>
             {{#each todo}} 
                 {{#unless accomplished}}
-                    {{> todo/todo-button devoured=false}}
+                    {{> todo/todo-button accomplished=false}}
                 {{/unless}}
             {{/each}}
         </ul>
@@ -27,7 +27,7 @@
             <h1 class="text-center">Completed tasks</h1>
             {{#each todo}} 
                 {{#if accomplished}}
-                    {{> todo/todo-button devoured=true}}
+                    {{> todo/todo-button accomplished=true}}
                 {{/if}}
             {{/each}}
         </ul>

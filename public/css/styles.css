@@ -1,19 +1,23 @@
-.todo-list {
+ul.todo-list {
+  list-style: none;
+}
+
+ul.todo-list>li, .todo-box {
+  padding: 10px 15px;
+  background-color: black;
+  text-align: center;
+  margin: 10px;
+  font-size: 2rem;
+}
+
+.button-col{ 
   margin: 0 auto;
-  margin-top: 75px;
+  text-align: center; 
+  margin-top: 10px;
 }
 
-input.new-item:focus {
-  outline: none;
-}
-
-.list-group-item > button.delete,
-.list-group-item > button.complete {
-  float: right;
-  height: 25px;
-  margin-left: 5px;
-}
-
-.edit {
-  width: 100%;
+.form-control {
+  align-content: center;
+  margin-top: 25px;
+  width: 75%;
 }

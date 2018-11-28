@@ -17,18 +17,18 @@ module.exports = function (app) {
         db.Todo.create({
             todo: req.body.todo
         }).then(function (dbTodo) {
-            res.json(dbTodo);
+            res.render("index", dbTodo)
         });
     });
 
  /*    // DELETE 
     app.delete("/api/todo/:id", function (req, res) {
-        db.Todo.destroy({
+        db.todo.destroy({
             where: {
                 id: req.params.id
             }
         }).then(function (dbTodo) {
-            res.json(dbTodo);
+            res.render("index", dbTodo)
         });
 
     }); */
@@ -36,7 +36,7 @@ module.exports = function (app) {
     // PUT 
     app.put("/api/todo", function (req, res) {
 
-        db.Todo.update({
+        db.todo.update({
             todo: req.body.todo,
             accomplished: true
         }, {
@@ -44,14 +44,14 @@ module.exports = function (app) {
                 id: req.body.id
             }
         }).then(function (dbTodo) {
-            res.json(dbTodo);
+            res.render("index", dbTodo)
         });
     });
 
     // GET PAGE 2
     app.get("/api/all", function (req, res) {
-        db.Todo.findAll({}).then(function (dbTodo) {
-            res.json(dbTodo);
+        db.todo.findAll({}).then(function (dbTodo) {
+            res.render("index", dbTodo)
         });
     });
 
