@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     var Todo = sequelize.define("todo", {
       id: {
-          type:DataTypes.STRING,
+          type:DataTypes.INTEGER,
           primaryKey:true,
           autoIncrement:true,
         },
