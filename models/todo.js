@@ -12,7 +12,12 @@ module.exports = function(sequelize, DataTypes) {
       },
       createdAt:DataTypes.DATE,
       updatedAt: DataTypes.DATE
-    });
+    },{
+        timestamps: true,
+        createdAt: true,
+        updatedAt: 'updateTimestamp',
+        freezeTableName: true
+    })
     return Todo;
   };
   

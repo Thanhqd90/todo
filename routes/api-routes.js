@@ -14,16 +14,14 @@ module.exports = function (app) {
 
     // POST 
     app.post("/api/todo", function (req, res) {
-
         db.Todo.create({
-            todo: req.body.todo,
-            accomplished: req.body.accomplished
+            todo: req.body.todo
         }).then(function (dbTodo) {
             res.json(dbTodo);
         });
     });
 
-    // DELETE 
+ /*    // DELETE 
     app.delete("/api/todo/:id", function (req, res) {
         db.Todo.destroy({
             where: {
@@ -33,14 +31,14 @@ module.exports = function (app) {
             res.json(dbTodo);
         });
 
-    });
+    }); */
 
     // PUT 
     app.put("/api/todo", function (req, res) {
 
         db.Todo.update({
             todo: req.body.todo,
-            accomplished: req.body.accomplished
+            accomplished: true
         }, {
             where: {
                 id: req.body.id
