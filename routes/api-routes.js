@@ -5,14 +5,15 @@ var db = require("../models");
 module.exports = function (app) {
 
     // GET
-    app.get("/api/todos", function (req, res) {
-        db.Todo.findAll({}).then(function (dbTodo) {
-            res.json(dbTodo);
+    app.get("/", function (req, res) {
+        console.log(Object.keys(db));
+        db.todo.findAll({}).then(function (dbTodo) {
+            res.render("index", dbTodo)
         });
     });
 
     // POST 
-    app.post("/api/todos", function (req, res) {
+    app.post("/api/todo", function (req, res) {
 
         db.Todo.create({
             todo: req.body.todo,
@@ -23,7 +24,7 @@ module.exports = function (app) {
     });
 
     // DELETE 
-    app.delete("/api/todos/:id", function (req, res) {
+    app.delete("/api/todo/:id", function (req, res) {
         db.Todo.destroy({
             where: {
                 id: req.params.id
@@ -35,7 +36,7 @@ module.exports = function (app) {
     });
 
     // PUT 
-    app.put("/api/todos", function (req, res) {
+    app.put("/api/todo", function (req, res) {
 
         db.Todo.update({
             todo: req.body.todo,
