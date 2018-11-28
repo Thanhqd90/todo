@@ -9,30 +9,31 @@
 
 <br><br>
 
-{{!-- <div class="container">
+<div class="container">
     <div class="row">
     <div class="col-md-6">
-        <ul class="burger-list">
-            <h1 class="text-center">Available to Devour</h1>
-            {{#each burgers}} 
-                {{#unless devoured}}
-                    {{> burgers/burger-button devoured=false}}
+        <ul class="todo-list">
+            <h1 class="text-center">Task to complete</h1>
+            {{#each todo}} 
+                {{#unless accomplished}}
+                    {{> todo/todo-button devoured=false}}
                 {{/unless}}
             {{/each}}
         </ul>
     </div>
+
     <div class="col-md-6">
-        <ul class="burger-list">
-            <h1 class="text-center">Previously Devoured</h1>
-            {{#each burgers}} 
-                {{#if devoured}}
-                    {{> burgers/burger-button devoured=true}}
+        <ul class="todo-list">
+            <h1 class="text-center">Completed tasks</h1>
+            {{#each todo}} 
+                {{#if accomplished}}
+                    {{> todo/todo-button devoured=true}}
                 {{/if}}
             {{/each}}
         </ul>
     </div>
 </div>
-</div> --}}
+</div>
 
 
 
