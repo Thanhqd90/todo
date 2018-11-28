@@ -16,8 +16,8 @@ ul.todo-list>li, .todo-box {
   margin-top: 10px;
 }
 
-form {
+.form-control {
   align-content: center;
   margin-top: 25px;
-  width: 50%;
+  width: 75%;
 }
